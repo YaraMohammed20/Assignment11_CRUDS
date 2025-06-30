@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarker</title>
+    <link rel="icon" href="bookmark.png">
+    <script src="https://kit.fontawesome.com/b995d1514f.js" crossorigin="anonymous"></script>
+    <link href="assets/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="bootstrap-5.3.5-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+
+    <div class="container d-flex flex-column justify-content-center align-items-center position-relative">
+        <h1 class="fw-bold fs-1 position-relative">Bookmarker</h1>
+        <div class=" fa-underline bg-black "></div>
+
+        <div class="inner w-100 p-3 py-4 mt-5 d-flex flex-column justify-content-center align-items-center gap-4">
+            <h2>
+                <i class="fa-solid fa-bookmark"></i>
+                Bookmark your favorite sites
+                <i class="fa-solid fa-bookmark"></i>
+            </h2>
+            <div class="site-name w-100 d-flex flex-column justify-content-center">
+                <label for="siteNameInput" class="pb-2 fw-semibold d-block me-auto"><i
+                        class="fa-solid fa-book-bookmark pe-2"></i>
+                    Site  Name:</label>
+                <input type="text" placeholder="Site Name" class="form-control mb-3" id="siteNameInput"
+                    name="siteName" pattern=".{3,}" title="Name must be at least 3 characters" required>
+
+            </div>
+
+            <div class="site-url w-100 d-flex flex-column justify-content-center">
+                <label for="siteURLInput" class="pb-2 fw-semibold d-block me-auto"> <i
+                        class="fa-solid fa-link pe-2"></i>Site
+                    URL:</label>
+                <input type="url" placeholder="Site URL" class="form-control mb-3" id="siteURLInput" name="siteURL"
+                       pattern="https?://.+" title="Please enter a valid URL starting with http:// or https://" required>
+
+            </div>
+
+            <button id="addUpdatesite" class="btn btn-submit m-auto d-block text-white"
+                onclick="addsite()">Submit</button>
+
+        </div>
+
+        <table class="table mt-4 text-center bg-light">
+            <thead>
+                <tr>
+                    <th class="text-capitalize">Index</th>
+                    <th class="text-capitalize">Website Name</th>
+                    <th class="text-capitalize">Visit</th>
+                    <th class="text-capitalize">Delete</th>
+                </tr>
+            </thead>
+            <tbody id="tableContent"></tbody>
+        </table>
+    </div>
+
+    <script src="bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
